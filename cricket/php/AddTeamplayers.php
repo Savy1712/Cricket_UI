@@ -6,6 +6,7 @@
 </head>
 
 <body>
+
 <p> TEAM NAME: 
 <select id="teams_list">
 <?php
@@ -17,24 +18,24 @@ for($i=0; $i<$total_count; $i++) {
 }
 ?>
 </select> </p>
-
-
-
+<form name="form1" type="GET">
 <input type="hidden" id="num_teams" value=<?php echo $total_count - 1; ?> />
 <p>NUMBER OF PLAYERS:<input type="text" id="num_players" name="name_players" value="15" />
-<button id="add_players" name="add_players" onclick="AddPlayers()">ADD PLAYERS</button>
+<button id="add_players" name="add_players" form="1" onclick="AddPlayers()">ADD PLAYERS</button>
 <br>*Including all substitutes</p>
+
 
 <div id="show_players" style="display:none">
 ADD PLAYERS:
 <?php 
-$num_players = $_POST['name_players'];
+$num_players = $_GET['name_players'];
 echo $num_players;
 for($i=0; $i< $num_players; $i++) {
     echo "<input type='text' name='players' value='' disabled/>";
 }
 ?>
 </div>
+</form>
 
 </body>
 </html>

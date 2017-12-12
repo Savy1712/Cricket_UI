@@ -7,15 +7,14 @@
 <body>
 <div id="rectangle">
 <div id="heading"><b> CRIKZ </b></div>
-<div id="button_id">
-<button id="new_series" name="New Series" onClick="newSeries()" size="100" >New Series</button>
-</div>
+<button class="newseriesbut" id="new_series" name="New Series" onClick="newSeries()" >NEW SERIES</button>
+<button class="viewseriesbut" id="view_series" name="View Series Information" onClick="viewSeries()">VIEW SERIES</button>
 <input type="hidden" id="first" size="10"/>
-<br>
-<div id="button_id">
-<button id="view_series" name="View Series Information" onClick="viewSeries()" width=100>View Series</button>
+<div id="check">
+<input type="checkbox" name="TermsAndConditionsCheck" id="term_check" checked/>I agree to <a href="./Terms_Conditions.html">terms and conditions</a> for accessing this app 
 </div>
 </div>
+<input type="text" id="terms" value="0"/>
 </body>
 </html>
 

@@ -1,30 +1,71 @@
 #rectangle {
-	width:50%;
-	height:50%;
-	border-color:blue;
-	border-style:dotted;
-	padding:10% 10%;
-	margin:20% 40% 30% 20%;
+	width:75%;
+	height:65%;
+	border-color:black;
+	border-style:solid;
+	margin:0% 40% 10% 10%;
 }
 
 #heading {
-	width:100%;
-	height:10%;
-	border-color:blue;
+	position:500%;
+	font-size:500%;
+	border-color:white;
 	border-style:solid;
 	text-align:center;
-	background-color:blue;
-	padding:0%;
-	margin:00%
+	background-color:red;
+	
 }
 
-#button_id {
-	position:relative;
-	top:20%;
-	bottom:50%;
-	right:50%;
-	left:40%;
+#terms{
+	text-align:center;
+	font-weight:normal;
 }
+
+.back_main {
+	margin:0% 100% 0% 0%;
+	width:15%;
+}
+
+#welcome{
+	margin:10% 25% 25% 25%;
+	position:relative;
+	text-align:center;
+	border-style:solid;
+	border-color:black;
+	color:black;
+	font-weight:bold;
+	font-size:200%;
+	
+
+}
+
+.newseriesbut{
+	position:relative;
+	font-size:300%;
+	text-align:center;
+	width:50%;
+	height:25%;
+	margin:2% 25% 0% 25%;
+	font-weight:bold;
+}
+
+.viewseriesbut{
+	font-size:300%;
+	text-align:center;
+	width:50%;
+	height:25%;
+	margin: 3% 25% 0% 25%;
+	font-weight:bold;
+}
+
+#check {
+	position:relative;
+	margin:2% 25% 0% 25%;
+	text-align:center;
+
+
+}
+
 
 #show_players {
 

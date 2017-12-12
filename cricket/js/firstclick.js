@@ -3,6 +3,10 @@ function  newSeries() {
     window.location="./../php/Series_info.php";
 }
 
+function checkterms() {
+    window.location="/html/Series.html";
+}
+
 
 function AddMore() {
     var hid_stat = document.getElementById('hidden_stat').value;
