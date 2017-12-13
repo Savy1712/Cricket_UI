@@ -7,6 +7,11 @@ function  newSeries() {
     }
 }
 
+function GoBack() {
+    window.history.back();
+
+}
+
 function checkterms() {
     window.location="/html/Series.html";
 }

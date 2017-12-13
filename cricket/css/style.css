@@ -1,9 +1,8 @@
 #rectangle {
-	width:75%;
-	height:65%;
 	border-color:black;
 	border-style:solid;
-	margin:0% 40% 10% 10%;
+	margin:auto;
+	padding:auto;
 }
 
 #heading {
@@ -12,8 +11,7 @@
 	border-color:white;
 	border-style:solid;
 	text-align:center;
-	background-color:red;
-	
+	background-color:red;	
 }
 
 #terms{
@@ -21,22 +19,56 @@
 	font-weight:normal;
 }
 
-.back_main {
-	margin:0% 100% 0% 0%;
-	width:15%;
-}
-
 #welcome{
-	margin:10% 25% 25% 25%;
+	margin:auto;
 	position:relative;
 	text-align:center;
 	border-style:solid;
 	border-color:black;
 	color:black;
 	font-weight:bold;
-	font-size:200%;
-	
+	font-size:100%;
+}
 
+#check {
+	position:relative;
+	margin:2% 25% 0% 25%;
+	text-align:center;
+}
+
+#SeriesInfo{
+	border-style:solid;
+	margin:auto;
+	padding:0% 0%;
+	text-align:center;
+}
+
+#InnerBox{
+	border-style:groove;
+	margin:0% 0% 0% 0%;
+	text-align:center;
+	padding:1%;
+	font-weight:bold;
+	font-size:100%;
+}
+
+#ValueBox{
+	margin:0% 0% 0% 0%;
+	text-align:center;
+	padding:1% 1% 2% 0%;
+}
+
+#SideHeadings {
+	font-size:200%;
+	border-color:white;
+	border-style:solid;
+	text-align:center;
+	background-color:red;
+	
+}
+
+#normal{
+	font-weight:normal;
 }
 
 .newseriesbut{
@@ -58,14 +90,20 @@
 	font-weight:bold;
 }
 
-#check {
-	position:relative;
-	margin:2% 25% 0% 25%;
+.back_main {
+	margin:0% 100% 0% 0%;
+	width:20%;
 	text-align:center;
-
-
+	font-weight:bold;
 }
 
+.NextBut {
+	margin:0% 0% 0% 80%;
+	width:20%;
+	text-align:center;
+	font-weight:bold;
+
+}
 
 #show_players {
 
