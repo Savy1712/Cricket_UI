@@ -1,6 +1,10 @@
 function  newSeries() {
-    document.getElementById("first").value = "New Series";
-    window.location="./../php/Series_info.php";
+    if(document.getElementById("term_check").checked == true){
+        window.location="./../php/Series_info.php";
+    }
+    else {
+      alert(" Warning !!.. Please read the terms and conditions and agree to it");
+    }
 }
 
 function checkterms() {
