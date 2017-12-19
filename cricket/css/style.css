@@ -50,7 +50,19 @@
 	padding:1%;
 	font-weight:bold;
 	font-size:100%;
+	
 }
+
+#Centering{
+	position:relative;
+	border-style:normal;
+	margin:0% 45% 0% 45%;
+	padding:auto;
+	text-align:justify;
+	vertical-align:justify;
+		
+}
+
 
 #ValueBox{
 	margin:0% 0% 0% 0%;
@@ -91,15 +103,17 @@
 }
 
 .back_main {
-	margin:0% 100% 0% 0%;
-	width:20%;
+	margin:auto;
+	width:100px;
+	height:50px;
 	text-align:center;
 	font-weight:bold;
 }
 
 .NextBut {
-	margin:0% 0% 0% 80%;
-	width:20%;
+	margin:auto;
+	width:100px;
+	height:50px;
 	text-align:center;
 	font-weight:bold;
 
@@ -112,6 +126,21 @@
 
 
 }
+
+.TextCenter {
+	margin:auto;
+	width:25%;
+	padding:1%;
+	text-align:center;
+	font-size:25px;
+
+}
+
+#Boxed{
+	border-style:groove;
+	padding:0%;
+}
+
 
 #PlayersList {
 	margin:auto;

@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div id="InnerBox">
 SERIES NAME :<span class="err">*<?php echo $nameErr; ?></span>
 <div id ="ValueBox">
-<input type='text' name='series_name' id="new_series_name" value='<?php echo $name; ?>' />
+<input type='text' name='series_name' id="new_series_name" value='<?php echo $name; ?>' class="TextCenter"/>
 
 </div></div>
 <!--TODO: Add more of series types -->
@@ -96,25 +96,44 @@ SERIES NAME :<span class="err">*<?php echo $nameErr; ?></span>
 SERIES TYPE : <span class="err">*<?php echo $typeErr; ?></span>
 <div id="ValueBox">
 <div id="normal">
+<div id="Centering">
+<table style="width:100%">
+<tr>
+<td align="center" border="bold"><input type="radio" name="series_type" <?php if(isset($type) && $type =="Bilateral") echo "checked"; ?> value="Bilateral"></td>
+<td align="left">Bilateral</td></tr>
+</table>
+</div>
 
-<input type="radio" name="series_type" 
-<?php if(isset($type) && $type =="Bilateral") echo "checked"; ?> value="Bilateral"> Bilateral
-<input type="radio" name="series_type" 
-<?php if(isset($type) && $type =="Triangular") echo "checked"; ?> value="Triangular">Triangular
+<div id="Centering">
+<table style="width:100%">
+<tr>
+<td align="center"><input type="radio" name="series_type" <?php if(isset($type) && $type =="Triangular") echo "checked"; ?> value="Triangular"></td>
+<td align="left">Triangular</td></tr>
+</table>
+</div>
+
+<div id="Centering">
+<table style="width:100%">
+<tr>
+<td align="center" border="bold"><input type="radio" name="series_type" <?php if(isset($type) && $type =="Bilateral") echo "checked"; ?> value="Bilateral"></td>
+<td align="left">World Cup</td></tr>
+</table>
+</div>
+
 
 </div>
 </div></div>
 <div id="InnerBox">
 SERIES YEAR: <span class="err">*<?php echo $yearErr; ?></span>
 <div id="ValueBox">
-<input type="text" name="series_year" id="new_series_year" value='<?php echo date('Y');?>' />
+<input type="text" name="series_year" id="new_series_year" value='<?php echo date('Y');?>' class="TextCenter" />
 
 </div></div>
 
 <div id="InnerBox">
 TEAMS PARTICIPATING:<span class="err">*<?php echo $team_participErr; ?></span>
 <div id="ValueBox">
-<input type="text" name="teams_participating" id="teams_part" value="<?php echo $team_particip; ?>" />
+<input type="text" name="teams_participating" id="teams_part" value="<?php echo $team_particip; ?>"  class="TextCenter"/>
 
 <div id="normal">
 separate country names with ','
@@ -123,7 +142,7 @@ separate country names with ','
 <div id="InnerBox">
 COUNTRY :<span class="err">*<?php echo $countryErr; ?></span>
 <div id="ValueBox">
-<select name="Country" id = "CountryList">
+<select name="Country" class="TextCenter">
     <option value = "Australia">Australia</option>
     <option value = "India">India</option>
     <option value = "SouthAfrica">South Africa</option>
@@ -144,7 +163,7 @@ VENUES :  <span class="err">*<?php echo $venueErr; ?></span>
 	echo "<span id=fooBar>";
         if($_POST['hidden_stat'] > 0) {
             for($i = 0; $i < $_POST['hidden_stat']; $i++) { 
-                echo '<input type="text" value= '.$_POST["text_".$i].'><br>';
+                echo '<input class="TextCenter" type="text" value= '.$_POST["text_".$i].'><br>';
             }
 	} echo "</span>";
    ?>
@@ -152,8 +171,12 @@ VENUES :  <span class="err">*<?php echo $venueErr; ?></span>
 </div>
 </div></div>
 <div id="InnerBox">
-<button class="back_main" id="back_but" form="form1" onclick="GoBack()">BACK</button>
-<input class="NextBut" type='submit' name= 'submit_button' value='NEXT' />
+<table style="width:100%">
+<tr>
+<td align="left"> </td>
+<td align="right"><button class="back_main" id="back_but" form="form1" onclick="GoBack()">BACK</button> <input class="NextBut" type='submit' name= 'submit_button' value='NEXT' /></td>
+</tr>
+</table>
 </div>
 </form>       
 </div> 

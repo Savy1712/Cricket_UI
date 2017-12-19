@@ -24,6 +24,7 @@ function AddMore() {
     var break_element = document.createElement("br");
     element.setAttribute("type", "text");
     element.setAttribute("value", "");
+    element.setAttribute("class", "TextCenter");
     element.setAttribute("name", "text_"+hid_stat);
     element.setAttribute("id", "text_"+hid_stat);
     var foo = document.getElementById("fooBar");
