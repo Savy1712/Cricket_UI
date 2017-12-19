@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $venueErr = "Missing"; 
     }
     if($nameErr == "" && $typeErr == "" && $yearErr == "" && $countryErr == "" && $team_participErr == "" && $venueErr == "") {
-        header('Location:AddTeamplayers.php'); 
+        header('Location:AddTeamplayers.php?teams='.$_POST['teams_participating']); 
         exit();
     } 
 
@@ -144,7 +144,7 @@ VENUES :  <span class="err">*<?php echo $venueErr; ?></span>
 	echo "<span id=fooBar>";
         if($_POST['hidden_stat'] > 0) {
             for($i = 0; $i < $_POST['hidden_stat']; $i++) { 
-                echo '<input type="text" value= '.$_POST["text_".$i].'><br>'; 
+                echo '<input type="text" value= '.$_POST["text_".$i].'><br>';
             }
 	} echo "</span>";
    ?>

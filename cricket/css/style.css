@@ -105,6 +105,24 @@
 
 }
 
+.AddPlayers {
+	margin:auto;
+	width:10%;
+	padding:0%;
+
+
+}
+
+#PlayersList {
+	margin:auto;
+	text-align:center;
+	padding:0% 0% 1% 0%;
+}
+
 #show_players {
+	border-style:normal;
+	margin:auto;
+	padding:0% 0%;
+	text-align:center;
 
 }
