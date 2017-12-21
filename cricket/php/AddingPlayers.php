@@ -17,6 +17,19 @@
     echo "<input type='text' name='players' value='' />";
     echo "</div>";
   }
+  
+
+  $team_selected = $_GET["team_selected"];
+  $teams_list = explode(",", $_GET["teams"]);
+  $total_count = count($teams_list); 
+  $teams = "";
+  for($i = 0; $i < $total_count; $i++) {
+    if($teams_list[$i] != $team_selected) {
+      if( $i+1 < $total_count) $teams = $teams. $teams_list[$i].',';
+      else $teams = $teams . $teams_list[$i];   
+    } 
+  }
+  echo "<input type='submit' name='next_button' value='NEXT TEAM' onclick='NextTeamCall()' class='NextBut'/>";
   echo "</div>";
 ?>
 

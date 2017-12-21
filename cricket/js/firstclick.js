@@ -35,53 +35,63 @@ function AddMore() {
 }
 
 
-function ShowPlayers() {
-  document.getElementById("teams_list").disabled=true;
+
+function NextTeamCall(teams) {  
+  document.getElementById("teams_list").value = teams;
+  
+}
+
+function ConfirmPlayerList() {
+  document.getElementById("teams_list").disabled = true;
+  document.getElementById("change_players").disabled=true;
+  document.getElementById("confirm_players").disabled=true;
+  var teams = document.getElementById("teams").value;
   var num_teams = document.getElementById("num_teams").value;
   document.getElementById("num_teams").value = num_teams - 1;
   var xmlhttp = new XMLHttpRequest();
-  var number_of_players = document.getElementById("num_players").value;
-  var teams = document.getElementById("teams").value;
+  /* Getting the selected team content */
   var team_selected = document.getElementById("teams_list").value;
-  
+  var number_of_players = document.getElementById("num_players").value;
+  var param="number="+number_of_players;
+  xmlhttp.open("POST", "/php/AddingPlayers.php?number="+number_of_players+"&teams="+teams+"&team_selected="+team_selected, true);
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("show_players").innerHTML = this.responseText;       
+    }
+  };
+  xmlhttp.send(param);  
+}
+
+
+function ShowPlayers() {
+  document.getElementById("num_players").disabled=true;
+  document.getElementById("change_players").disabled=false;
+  document.getElementById("add_players").disabled = true;
+  if(document.getElementById("num_change").value == 1) {
+    document.getElementById("teams_list").disabled=false;
+  }
+  var number_of_players = document.getElementById("num_players").value;
+  document.getElementById("num_change").value = 1;
   if(number_of_players > 0) {
     document.getElementById('show_players').style.display='block';
+    document.getElementById('hidebox').style.display="block";
   } else if(number_of_players == "") {
       alert("Enter number of players ");
       location.href = window.location;
   } else {
       alert("Number of players selected is "+number_of_players+" : Invalid");
       location.href = window.location; 
+  } 
+}
+
+function NumChange() {
+  document.getElementById("add_players").disabled = false;
+  if(document.getElementById("num_change").value == 1)  {
+    document.getElementById("hidebox").style.display="none";
+    document.getElementById("show_players").style.display="none";   
+    document.getElementById("change_players").disabled=true;
+    document.getElementById("num_players").disabled=false;
+    document.getElementById("confirm_players").disabled=false;
   }
- 
-  var param="number="+number_of_players;
-  xmlhttp.open("POST", "/php/AddingPlayers.php?number="+number_of_players+"&team_selected="+team_selected,true);
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("show_players").innerHTML = this.responseText;       
-    }
-  };
-
-  xmlhttp.send(param);  
 }
-
-
-function HideList() {
-  
-  
-}
-
-
-
-function AddPlayers() {
-    var num_team = document.getElementById('num_teams').value;
-    var num_players = document.getElementById('num_players').value;
-    }
-
-function GetNumofPlayers() {
-    alert(document.getElementById('num_players').value);
-    return document.getElementById('num_players').value;
-}
-
-
 
