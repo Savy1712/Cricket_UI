@@ -77,6 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
+
+
 <!-- Debugging purpose 
 <form method='POST' action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' > 
 -->
@@ -99,15 +102,15 @@ SERIES TYPE : <span class="err">*<?php echo $typeErr; ?></span>
 <div id="Centering">
 <table style="width:100%">
 <tr>
-<td align="center" border="bold"><input type="radio" name="series_type" <?php if(isset($type) && $type =="Bilateral") echo "checked"; ?> value="Bilateral"></td>
-<td align="left">Bilateral</td></tr>
+<td ><input type="radio" name="series_type" <?php if(isset($type) && $type =="Bilateral") echo "checked"; ?> value="Bilateral"></td>
+<td align="left"><label>Bilateral</label></td></tr>
 </table>
 </div>
 
 <div id="Centering">
 <table style="width:100%">
 <tr>
-<td align="center"><input type="radio" name="series_type" <?php if(isset($type) && $type =="Triangular") echo "checked"; ?> value="Triangular"></td>
+<td ><input type="radio" name="series_type" <?php if(isset($type) && $type =="Triangular") echo "checked"; ?> value="Triangular"></td>
 <td align="left">Triangular</td></tr>
 </table>
 </div>
@@ -115,7 +118,7 @@ SERIES TYPE : <span class="err">*<?php echo $typeErr; ?></span>
 <div id="Centering">
 <table style="width:100%">
 <tr>
-<td align="center" border="bold"><input type="radio" name="series_type" <?php if(isset($type) && $type =="Bilateral") echo "checked"; ?> value="Bilateral"></td>
+<td ><input type="radio" name="series_type" <?php if(isset($type) && $type =="World Cup") echo "checked"; ?> value="World Cup"></td>
 <td align="left">World Cup</td></tr>
 </table>
 </div>

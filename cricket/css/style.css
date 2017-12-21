@@ -59,8 +59,7 @@
 	margin:0% 45% 0% 45%;
 	padding:auto;
 	text-align:justify;
-	vertical-align:justify;
-		
+	vertical-align:center;		
 }
 
 
@@ -75,7 +74,7 @@
 	border-color:white;
 	border-style:solid;
 	text-align:center;
-	background-color:red;
+	background-color:#FF3333;
 	
 }
 
@@ -121,10 +120,10 @@
 
 .AddPlayers {
 	margin:auto;
-	width:10%;
-	padding:0%;
-
-
+	width:15%;
+	padding:1%;
+	text-align:center;
+	font-size:100%;
 }
 
 .TextCenter {
@@ -132,13 +131,21 @@
 	width:25%;
 	padding:1%;
 	text-align:center;
-	font-size:25px;
+	font-size:100%;
 
 }
 
 #Boxed{
-	border-style:groove;
+	margin:auto;
+	border-style:normal;
+	width:100%;
 	padding:0%;
+	text-align:center;
+}
+
+#ButtonBox{
+	border-style:normal;
+	padding:1%;
 }
 
 
@@ -149,9 +156,4 @@
 }
 
 #show_players {
-	border-style:normal;
-	margin:auto;
-	padding:0% 0%;
-	text-align:center;
-
 }

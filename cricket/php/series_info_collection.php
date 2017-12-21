@@ -1,8 +1,11 @@
 <html>
 <body>
+<div id="overall">
 <?php
 $name = "";
-if ($_SERVER["REQUEST_METHOD"]) {
+$number = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $num = $_POST["number"];
   $name = $_POST["series_name"];
   $type = $_POST["series_type"];
   $year = $_POST["series_year"];
@@ -12,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"]) {
 ?>
 <b> Informations from previous page </b>
 <p align = "center">
+Number:"<?php echo $num ?>";
 Name :"<?php echo $name ?>"
 Type :"<?php echo $type ?>"
 Year :"<?php echo $year ?>"
@@ -36,6 +40,7 @@ for($i = 0; $i < $total_count; $i++) {
 }
 ?>"
 </p> 
+</div>
 </body>
 </html>
 
