@@ -8,17 +8,33 @@
 </head>
 
 <body>
+  <div id="InnerBox">
 <?php
-  $num_players = $_GET["number"];
-  echo "<div id='InnerBox'>";
-  echo strtoupper($_GET["team_selected"])." PLAYERS:".$num_players;
-  for($i=0; $i < $num_players; $i++) {
-    echo "<div id='PlayersList'>";
-    echo "<input type='text' name='players' value='' />";
-    echo "</div>";
+  $num_players ="";
+  $name = "";
+  if(REQUEST_METHOD["SERVER"] == "POST") {
+    $num_players = $_GET["number"];
+    $name = $_GET["player_name"];
   }
-  
+  echo "<input type='hidden' name='player_count_name' id='player_count' />";
+  echo "<div id='RightCornering'> ADDING ".strtoupper($_GET["team_selected"])." PLAYERS : ".$num_players."</div>";
+  echo "<div id='PlayerBox'>";
 
+  echo "<table id='PlayersList'>";
+  echo "<tr>";
+  echo "<td></td>";
+  echo "</tr>";
+  for($i=0; $i < $num_players; $i++) {
+    echo "<tr>";
+    if ( $i == 0) {
+    echo '<td><div id="Player"><input type="text" id="player_id" value='.$name.' name="player_name" onchange="InformationAboutPlayer()" /></div></td>';
+    } else  {
+        echo '<td><div id="Player"><input type="text" id="player_id" value='.$name .' name="player_name" onchange="InformationAboutPlayer()" disabled /></div></td>';
+    }
+    echo '<div id="PlayerInfo" style="display:none"></div>';
+    echo "</tr>";
+  }
+  echo "</table>";
   $team_selected = $_GET["team_selected"];
   $teams_list = explode(",", $_GET["teams"]);
   $total_count = count($teams_list); 
@@ -29,10 +45,22 @@
       else $teams = $teams . $teams_list[$i];   
     } 
   }
-  echo "<input type='submit' name='next_button' value='NEXT TEAM' onclick='NextTeamCall()' class='NextBut'/>";
-  echo "</div>";
 ?>
-
+<?php 
+  if($total_count == 1) {  
+?>
+    <input type="submit" name="match_type_button" value="FINISH" onclick="" class="NextBut"/>    
+<?php 
+  } else if($total_count > 1) {
+?> 
+    <input type="submit" name="next_button" value="NEXT TEAM" onclick="NextTeamCall('<?php echo $teams; ?>')" class="NextBut"/>
+<?php
+  } else {
+    
+  }
+?>
+  </div>
+  <div>
 </body>
 </html>
 

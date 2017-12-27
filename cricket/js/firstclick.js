@@ -37,8 +37,8 @@ function AddMore() {
 
 
 function NextTeamCall(teams) {  
-  document.getElementById("teams_list").value = teams;
-  
+  alert(teams);
+  window.location = "/php/AddTeamplayers.php?teams="+teams;
 }
 
 function ConfirmPlayerList() {
@@ -52,8 +52,10 @@ function ConfirmPlayerList() {
   /* Getting the selected team content */
   var team_selected = document.getElementById("teams_list").value;
   var number_of_players = document.getElementById("num_players").value;
+  //var team_players = document.getElementById("player_name").value;
   var param="number="+number_of_players;
   xmlhttp.open("POST", "/php/AddingPlayers.php?number="+number_of_players+"&teams="+teams+"&team_selected="+team_selected, true);
+  xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("show_players").innerHTML = this.responseText;       
@@ -84,6 +86,23 @@ function ShowPlayers() {
   } 
 }
 
+function InformationAboutPlayer() {
+  var name = document.getElementById("player_id").value;
+  var country = document.getElementById("teams_list").value;
+  var xmlhttp = new XMLHttpRequest();
+  var param = "player_name="+name+"&player_country="+country;
+  xmlhttp.open("POST", "/php/PlayerInfo.php", true);
+  /* Must for sending POST request to other page */
+  xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("PlayerInfo").innerHTML = this.responseText;       
+    }
+  };
+  document.getElementById("PlayerInfo").style.display="block";
+  xmlhttp.send(param);  
+}
+
 function NumChange() {
   document.getElementById("add_players").disabled = false;
   if(document.getElementById("num_change").value == 1)  {
@@ -93,5 +112,13 @@ function NumChange() {
     document.getElementById("num_players").disabled=false;
     document.getElementById("confirm_players").disabled=false;
   }
+}
+
+
+
+function NextPlayerInfo() {
+  var player_count = document.getElementById("num_players").value 
+  document.getElementById("num_players").value =  player_count - 1;
+  ConfirmPlayerList();
 }
 

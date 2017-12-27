@@ -11,13 +11,13 @@
 
 <div id="overall">
 <?php
-$teams_particip = trim($_GET['teams']);
+$teams_particip = trim($_GET["teams"]);
 $teams_list= explode(',', trim($teams_particip));
 $total_count = count($teams_list) + 1;
 $num_players = 15;
 ?>
 
-<div id="SideHeadings"> ADDING TEAMS</div>
+<div id="SideHeadings"> ADDING TEAMS AND PLAYERS </div>
 <input type="hidden" id="teams" value="<?php echo $teams_particip; ?>" />
 <input type="hidden" id="num_teams" value="<?php echo $total_count - 1; ?>" />
 <input type="hidden" id="selected_teams" value=""/>
