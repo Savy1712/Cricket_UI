@@ -2,9 +2,9 @@
 <html lang="en">
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link type="text/css" rel="stylesheet" href="/css/style.css">
+<link type="text/css" rel="stylesheet" href="/cricket/css/style.css">
 
-<script  src="/js/firstclick.js"> </script>
+<script  src="/cricket/js/firstclick.js"> </script>
 </head>
 
 <body>

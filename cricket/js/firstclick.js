@@ -1,6 +1,6 @@
 function  newSeries() {
     if(document.getElementById("term_check").checked == true){
-        window.location="./../php/Series_info.php";
+        window.location="/cricket/php/Series_info.php";
     }
     else {
       alert(" Warning !!.. Please read the terms and conditions and agree to it");
@@ -13,7 +13,7 @@ function GoBack() {
 }
 
 function checkterms() {
-    window.location="/html/Series.html";
+    window.location="/cricket/html/Series.html";
 }
 
 
@@ -38,7 +38,7 @@ function AddMore() {
 
 function NextTeamCall(teams) {  
   alert(teams);
-  window.location = "/php/AddTeamplayers.php?teams="+teams;
+  window.location = "/cricket/php/AddTeamplayers.php?teams="+teams;
 }
 
 function ConfirmPlayerList() {
@@ -54,7 +54,7 @@ function ConfirmPlayerList() {
   var number_of_players = document.getElementById("num_players").value;
   //var team_players = document.getElementById("player_name").value;
   var param="number="+number_of_players;
-  xmlhttp.open("POST", "/php/AddingPlayers.php?number="+number_of_players+"&teams="+teams+"&team_selected="+team_selected, true);
+  xmlhttp.open("POST", "/cricket/php/AddingPlayers.php?number="+number_of_players+"&teams="+teams+"&team_selected="+team_selected, true);
   xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -91,7 +91,7 @@ function InformationAboutPlayer() {
   var country = document.getElementById("teams_list").value;
   var xmlhttp = new XMLHttpRequest();
   var param = "player_name="+name+"&player_country="+country;
-  xmlhttp.open("POST", "/php/PlayerInfo.php", true);
+  xmlhttp.open("POST", "/cricket/php/PlayerInfo.php", true);
   /* Must for sending POST request to other page */
   xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
   xmlhttp.onreadystatechange = function() {

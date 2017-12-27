@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>  
 <html lang="en">
 <head>
-<link type="text/css" rel="stylesheet" href="/css/style.css">
+<link type="text/css" rel="stylesheet" href="/cricket/css/style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
 <style> .err { color:red;} </style>
-<script  src="/js/firstclick.js"> </script>
+<script  src="/cricket/js/firstclick.js"> </script>
 </head>
 
 <body>
